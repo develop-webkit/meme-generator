@@ -1,0 +1,42 @@
+*{
+    box-sizing: content-box;
+}
+
+body{
+    margin:0;
+    font-family: sans-serif;
+}
+
+header{
+    background:linear-gradient(to right, #66207F , #A421D1);
+    padding:1.5rem 3rem;
+    display:flex;
+
+    color:#fff;
+}
+
+.container{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div{
+    display: flex;
+    align-items: center;
+}
+
+header div img{
+    width:50px;
+    margin-right:5px;
+}
+
+h1{
+    font-size:20px;
+}
+
+h1,p{
+    margin:0;
+}
