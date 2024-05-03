@@ -1,5 +1,5 @@
 *{
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body{
@@ -39,4 +39,66 @@ h1{
 
 h1,p{
     margin:0;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
+    padding:50px 15px;
+    margin:auto;
+    max-width:1200px;
+    width:100%;
+}
+
+main form{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-label-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+}
+
+.form-label{
+    display:flex;
+    flex-direction: column;
+    width:48%;
+    font-weight: bold;
+}
+
+.form-label input{
+    width:100%;
+    border:0;
+    border: 1px solid #ccc;
+    padding:15px 10px;
+    font-size:16px;
+    border-radius: 3px;
+    margin-top:10px;
+}
+
+.form-label input:focus-visible{
+    outline:none;
+}
+
+.submitBtn{
+    margin-top:20px;
+    width:100%;
+    background:linear-gradient(to right, #66207F , #A421D1);
+    padding:20px 5px;
+    color:#fff;
+    cursor: pointer;
+    border:none;
+    font-size:20px;
+    border-radius: 5px;
+}
+
+.submitBtn img{
+    vertical-align: middle;
 }
