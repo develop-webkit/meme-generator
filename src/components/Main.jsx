@@ -30,7 +30,7 @@ export default function Main(){
                     <button onClick={getImage} className="submitBtn" type="button">Get New Image <img src={memeIcon} alt="small picture frame" /></button>
                 </form>
                 <div className="meme-image-div">
-                    <img src={memeImage} alt="image of meme" />
+                    <img src={memeImage} alt="meme" />
                 </div>
             </main>    
         </>
