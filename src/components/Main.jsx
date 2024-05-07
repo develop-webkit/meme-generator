@@ -1,19 +1,18 @@
+import React from 'react'
 import memeIcon from "../assets/meme-icon.png";
 import memeData  from "../meme.js";
 
 export default function Main(){
-    let url = "url here";
+    const [memeImage, SetMemeImage] = React.useState("")    
     function getImage(){
         const memeArray = memeData.data.memes;
         const getRandom = Number.parseInt(Math.random() * memeArray.length);
-        ({url} = memeArray[getRandom]);
+        SetMemeImage(memeArray[getRandom].url)
     };
-
     return (
         <>
             <main>
                 <form action="">
-                    <p>{url}</p>
                     <div className="form-label-block">
                         <div className="form-label">
                             <label htmlFor="topText">
@@ -30,6 +29,9 @@ export default function Main(){
                     </div>
                     <button onClick={getImage} className="submitBtn" type="button">Get New Image <img src={memeIcon} alt="small picture frame" /></button>
                 </form>
+                <div className="meme-image-div">
+                    <img src={memeImage} alt="image of meme" />
+                </div>
             </main>    
         </>
     )

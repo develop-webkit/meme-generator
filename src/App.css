@@ -49,6 +49,7 @@ main{
     margin:auto;
     max-width:1200px;
     width:100%;
+    flex-direction: column;
 }
 
 main form{
@@ -101,4 +102,16 @@ main form{
 
 .submitBtn img{
     vertical-align: middle;
+}
+
+.meme-image-div{
+    margin-top:50px;
+}
+
+.meme-image-div img{
+    max-width:100%;
+    height:auto;
+    width:100%;
+    display:block;
+    margin:auto;
 }
