@@ -3,12 +3,18 @@ import memeIcon from "../assets/meme-icon.png";
 import memeData  from "../meme.js";
 
 export default function Main(){
-    const [memeImage, SetMemeImage] = React.useState("")    
+    const [meme, setMeme] = React.useState({topText: "", bottomText: "", randomImage: "http://i.imgflip.com/1bij.jpg"});
+    const [allMemeImages, setAllMemeImages] = React.useState(memeData);
+
     function getImage(){
-        const memeArray = memeData.data.memes;
+        const memeArray = allMemeImages.data.memes;
         const getRandom = Number.parseInt(Math.random() * memeArray.length);
-        SetMemeImage(memeArray[getRandom].url)
-    };
+        const memeUrl = memeArray[getRandom].url
+        setMeme(
+            (preMeme) => ({ ...preMeme, randomImage: memeUrl})
+        );
+    }
+
     return (
         <>
             <main>
@@ -27,10 +33,12 @@ export default function Main(){
                             </label>
                         </div>
                     </div>
-                    <button onClick={getImage} className="submitBtn" type="button">Get New Image <img src={memeIcon} alt="small picture frame" /></button>
+                    <button onClick={getImage} className="submitBtn" type="button">
+                        Get New Image <img src={memeIcon} alt="small frame" />
+                    </button>
                 </form>
                 <div className="meme-image-div">
-                    <img src={memeImage} alt="meme" />
+                    <img src={meme.randomImage} alt="meme" />
                 </div>
             </main>    
         </>
