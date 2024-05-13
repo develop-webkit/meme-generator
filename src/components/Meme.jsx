@@ -15,6 +15,10 @@ export default function Main(){
         );
     }
 
+    function inputEvent(event){
+        console.log(event)
+    }
+
     return (
         <>
             <main>
@@ -23,7 +27,7 @@ export default function Main(){
                         <div className="form-label">
                             <label htmlFor="topText">
                                 Top Text
-                                <input placeholder="Top Text" type="text" name="topText" id="topText" />
+                                <input onChange={inputEvent} placeholder="Top Text" type="text" name="topText" id="topText" />
                             </label>
                         </div>
                         <div className="form-label">
