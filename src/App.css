@@ -16,7 +16,7 @@ header{
 }
 
 .container{
-    max-width:1200px;
+    max-width:900px;
     width:100%;
     margin:auto;
     justify-content: space-between;
@@ -47,7 +47,7 @@ main{
     align-items: stretch;
     padding:50px 15px;
     margin:auto;
-    max-width:1200px;
+    max-width:900px;
     width:100%;
     flex-direction: column;
 }
@@ -106,6 +106,7 @@ main form{
 
 .meme-image-div{
     margin-top:50px;
+    position:relative;
 }
 
 .meme-image-div img{
@@ -114,4 +115,37 @@ main form{
     width:100%;
     display:block;
     margin:auto;
+}
+
+.meme-Text{
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom-Meme-Text {
+    bottom: 0;
+}
+
+.top-Meme-Text {
+    top: 0;
 }

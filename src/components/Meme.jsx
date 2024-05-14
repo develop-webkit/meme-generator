@@ -15,9 +15,33 @@ export default function Main(){
         );
     }
 
-    function inputEvent(event){
-        console.log(event)
+    function onChange(event){
+        const {name,value} = event.target
+        setMeme(
+            preMeme =>{
+                return {
+                    ...preMeme,
+                    [name]:value
+                }
+            }
+        )
     }
+
+/**
+     * Challenge: 
+     * As soon as the Meme component loads the first time,
+     * make an API call to "https://api.imgflip.com/get_memes".
+     * 
+     * When the data comes in, save just the memes array part
+     * of that data to the `allMemes` state
+     * 
+     * Think about if there are any dependencies that, if they
+     * changed, you'd want to cause to re-run this function.
+     * 
+     * Hint: for now, don't try to use an async/await function.
+     * Instead, use `.then()` blocks to resolve the promises
+     * from using `fetch`. We'll learn why after this challenge.
+     */
 
     return (
         <>
@@ -27,13 +51,13 @@ export default function Main(){
                         <div className="form-label">
                             <label htmlFor="topText">
                                 Top Text
-                                <input onChange={inputEvent} placeholder="Top Text" type="text" name="topText" id="topText" />
+                                <input onChange={onChange} placeholder="Top Text" value={meme.topText} type="text" name="topText" id="topText" />
                             </label>
                         </div>
                         <div className="form-label">
                             <label htmlFor="bottomText">
                                 Bottom Text
-                                <input placeholder="Bottom Text" type="text" name="bottomText" id="bottomText" />
+                                <input onChange={onChange} placeholder="Bottom Text" value={meme.bottomText} type="text" name="bottomText" id="bottomText" />
                             </label>
                         </div>
                     </div>
@@ -42,7 +66,9 @@ export default function Main(){
                     </button>
                 </form>
                 <div className="meme-image-div">
+                    <h2 className='meme-Text top-Meme-Text'>{meme.topText}</h2>
                     <img src={meme.randomImage} alt="meme" />
+                    <h2 className='meme-Text bottom-Meme-Text'>{meme.bottomText}</h2>
                 </div>
             </main>    
         </>
